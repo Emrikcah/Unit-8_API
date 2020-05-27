@@ -1,1 +1,96 @@
-/* No CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 2rem 0;
+  font-size: .9rem;
+}
+
+.title-h1 {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.card {
+  border: 1px solid #c1c1c1;
+  border-radius: 7px;
+  margin: 2rem 0;
+  padding: 2rem 0;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card .img {
+  width: 10rem;
+  border-radius: 50%;
+}
+
+.card .group {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.card .group h2 {
+  margin: 0.5rem 0;
+  font-size: 2rem;
+}
+
+.card .group .email {
+  margin-bottom: .7rem;
+}
+
+.card .group .email,
+.card .group .city {
+  color: #c1c1c1;
+}
+
+@media (min-width: 600px) {
+  .container .title {
+    font-size: 1rem;
+  }
+  .results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .results .card {
+    margin: 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  .results {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .results .card {
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+  .results .card .img {
+    margin-right: 1.5rem;
+  }
+  .results .card .group {
+    text-align: left;
+  }
+}
