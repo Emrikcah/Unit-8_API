@@ -1,6 +1,8 @@
 const results = document.querySelector(".results");
 const randPeople = fetch("https://randomuser.me/api/?results=12");
 
+
+
 randPeople
   .then((response) => response.json())
   .then((data) => getInformation(data.results));
