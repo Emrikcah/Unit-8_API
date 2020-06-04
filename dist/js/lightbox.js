@@ -1,16 +1,9 @@
-const card = document.querySelectorAll('.card');
-const lightbox = document.createElement('div');
+const cards = document.querySelectorAll(".card");
 
-lightbox.id = 'lightbox';
-document.body.appendChild(lightbox);
+function imageClick() {
+  console.log('working');
+}
 
-card.forEach(currentItem => {
-    console.log(currentItem);
-    
-    currentItem.addEventListener('click',e =>{
-        console.log('working');
-        
-        lightbox.classList.add('active');
-        
-    })
+cards.forEach((currentItem) => {
+  currentItem.addEventListener("click", imageClick);
 });
