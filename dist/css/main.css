@@ -85,29 +85,29 @@ html {
   .container .title {
     font-size: 1rem;
   }
-  .results {
+  .main-card {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
-  .results .card {
+  .main-card .card {
     margin: 0;
   }
 }
 
 @media (min-width: 1000px) {
-  .results {
+  .main-card {
     grid-template-columns: repeat(3, 1fr);
   }
-  .results .card {
+  .main-card .card {
     padding: 2.5rem 1.5rem;
     display: flex;
     align-items: center;
   }
-  .results .card .img {
+  .main-card .card .img {
     margin-right: 1.5rem;
   }
-  .results .card .group {
+  .main-card .card .group {
     text-align: left;
   }
 }
