@@ -56,16 +56,20 @@ html {
   font-size: 2rem;
 }
 
-.card .group .email {
+.card .group .email,
+.card .group .city,
+.card .group .phone,
+.card .group .address,
+.card .group .dob {
+  color: #c1c1c1;
   margin-bottom: 0.7rem;
 }
 
-.card .group .email,
-.card .group .city {
-  color: #c1c1c1;
+.card .group hr {
+  margin-bottom: 0.7rem;
 }
 
-#lightbox {
+#overlay {
   position: fixed;
   z-index: 2;
   top: 0;
@@ -75,7 +79,7 @@ html {
   display: none;
 }
 
-#lightbox.active {
+#overlay.active {
   display: flex;
   justify-content: center;
   align-items: center;

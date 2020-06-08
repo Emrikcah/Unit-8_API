@@ -53,19 +53,23 @@ html {
       font-size: 2rem;
     }
 
-    .email {
+    .email,
+    .city,
+    .phone,
+    .address,
+    .dob {
+      color: #c1c1c1;
       margin-bottom: 0.7rem;
     }
 
-    .email,
-    .city {
-      color: #c1c1c1;
+    hr {
+      margin-bottom: 0.7rem;
     }
   }
 }
 
 //Lightbox overlay
-#lightbox {
+#overlay {
   position: fixed;
   z-index: 2;
   top: 0;
