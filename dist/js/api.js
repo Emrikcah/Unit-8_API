@@ -56,7 +56,7 @@ function modalDisplay(empData) {
     name,
     picture,
     email,
-    location: { city, street, state, postcode },
+    location: { city, street:{number,name: stname}, state, postcode },
     phone,
     dob,
   } = empData;
@@ -73,7 +73,7 @@ function modalDisplay(empData) {
             <p class="city">${city}</p>
             <hr/>
             <p class="phone">${phone}</p>
-            <p class="address">${street.number}, ${street.name}, ${state}, ${postcode}</p>
+            <p class="address">${number}, ${stname}, ${state}, ${postcode}</p>
             <p class="dob">Birthday: ${date.toLocaleDateString()}</p>
         </div>
     </div>
