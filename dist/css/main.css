@@ -16,7 +16,7 @@ html {
 }
 
 .title {
-  margin: 2rem 0;
+  margin: 7rem 0 2rem 0;
   font-size: 0.9rem;
 }
 
@@ -34,6 +34,8 @@ html {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 100%;
+  background: #fff;
+  /*Modal styles*/
 }
 
 .card:hover {
@@ -56,17 +58,54 @@ html {
   font-size: 2rem;
 }
 
+.card .group .title,
 .card .group .email,
 .card .group .city,
 .card .group .phone,
 .card .group .address,
 .card .group .dob {
-  color: #c1c1c1;
+  color: #a8a8a8;
   margin-bottom: 0.7rem;
 }
 
 .card .group hr {
+  border: 0;
+  height: 1px;
+  background: #c1c1c1;
   margin-bottom: 0.7rem;
+}
+
+.card.large {
+  width: 350px;
+  margin: 0;
+  padding: 3.5rem 3.5rem;
+}
+
+.card.large .img {
+  width: 15rem;
+}
+
+.card.large hr {
+  margin: 2.5rem 0;
+}
+
+.card.large .title,
+.card.large .email,
+.card.large .city,
+.card.large .phone,
+.card.large .address,
+.card.large .dob {
+  color: #a8a8a8;
+  margin-bottom: 1.3rem;
+}
+
+.display-modal {
+  display: block;
+  position: absolute;
+  z-index: 1000;
+  top: 37%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #overlay {
@@ -80,9 +119,7 @@ html {
 }
 
 #overlay.active {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
 }
 
 @media (min-width: 600px) {

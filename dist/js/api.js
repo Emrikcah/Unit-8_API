@@ -50,22 +50,34 @@ function createCard(emp) {
     })
   );
 }
+/**Create the overlay and append it to the body */
+function createOverlay() {
+  const overlay = document.createElement("div");
+  overlay.id = "overlay";
+  document.body.appendChild(overlay);
+  overlay.classList.add("active");
+    
+}
 
 function modalDisplay(empData) {
   const {
     name,
     picture,
     email,
-    location: { city, street:{number,name: stname}, state, postcode },
+    location: {
+      city,
+      street: { number, name: stname },
+      state,
+      postcode,
+    },
     phone,
     dob,
   } = empData;
 
-  let date = new Date(dob.date)
-
+  let date = new Date(dob.date);
+  
   displayModal.innerHTML += `
-    
-    <div class="card">
+    <div class="card large">
         <img src='${picture.large}' class='img' alt>
         <div class="group">
             <h2 class="fullname">${name.first} ${name.last}</h2>
@@ -78,10 +90,5 @@ function modalDisplay(empData) {
         </div>
     </div>
     `;
-
-  const overlay = document.createElement("div");
-  overlay.id = "overlay";
-  document.body.appendChild(overlay);
-  overlay.classList.add("active");
-  console.log(empData);
+  createOverlay();
 }
