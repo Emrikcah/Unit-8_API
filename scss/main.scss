@@ -16,7 +16,7 @@ html {
 }
 
 .title {
-  margin: 2rem 0;
+  margin: 7rem 0 2rem 0;
   font-size: 0.9rem;
 }
 
@@ -34,6 +34,7 @@ html {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 100%;
+  background: #fff;
 
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -53,19 +54,56 @@ html {
       font-size: 2rem;
     }
 
+    .title,
     .email,
     .city,
     .phone,
     .address,
     .dob {
-      color: #c1c1c1;
+      color: #a8a8a8;
       margin-bottom: 0.7rem;
     }
 
     hr {
+      border: 0;
+      height: 1px;
+      background: #c1c1c1;
       margin-bottom: 0.7rem;
     }
   }
+  /*Modal styles*/
+  &.large {
+    width: 350px;
+    margin: 0;
+    padding: 3.5rem 3.5rem;
+
+    .img {
+      width: 15rem;
+    }
+
+    hr {
+      margin: 2.5rem 0;
+    }
+
+    .title,
+    .email,
+    .city,
+    .phone,
+    .address,
+    .dob {
+      color: #a8a8a8;
+      margin-bottom: 1.3rem;
+    }
+  }
+}
+
+.display-modal {
+  display: block;
+  position: absolute;
+  z-index: 1000;
+  top: 37%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 //Lightbox overlay
@@ -79,9 +117,7 @@ html {
   display: none;
 
   &.active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
   }
 }
 
@@ -101,6 +137,7 @@ html {
     }
   }
 }
+
 @media (min-width: 1000px) {
   .main-card {
     grid-template-columns: repeat(3, 1fr);
