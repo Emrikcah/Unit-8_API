@@ -1,12 +1,10 @@
-
 //for performance resons its better to pull out only the data you need from api
 const randPeople = fetch(
   "https://randomuser.me/api/?results=12&inc=name,picture,email,location,phone,dob"
 );
 const mainCard = document.querySelector(".main-card");
 const displayModal = document.querySelector(".display-modal");
-
-
+const closeBtn = document.querySelector(".close-btn");
 
 
 // Get the data from the API
@@ -48,7 +46,7 @@ function getInformation(data) {
  * objects to it */
 function createCard(emp) {
   const cards = document.querySelectorAll(".card");
-    cards.forEach((card, index) =>
+  cards.forEach((card, index) =>
     card.addEventListener("click", () => {
       modalDisplay(emp[index]);
     })
@@ -61,14 +59,9 @@ function createOverlay() {
   document.body.appendChild(overlay);
   overlay.classList.add("active");
   console.log();
-  
-    
 }
 
 function modalDisplay(empData) {
-    // debugger;
-    
-
   const {
     name,
     picture,
@@ -84,7 +77,7 @@ function modalDisplay(empData) {
   } = empData;
 
   let date = new Date(dob.date);
-  
+
   displayModal.innerHTML += `
     <div class="card large">
         <button class="close-btn">&times;</button>
@@ -105,5 +98,5 @@ function modalDisplay(empData) {
 }
 
 function closeModal(params) {
-    
+
 }
