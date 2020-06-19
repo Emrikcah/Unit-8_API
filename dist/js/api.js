@@ -81,7 +81,7 @@ function modalDisplay(empData) {
             <p class="city">${city}</p>
             <hr/>
             <p class="phone">${phone}</p>
-            <p class="address">${number}, ${stname}, ${state}, ${postcode}</p>
+            <p class="address">${number} ${stname}, ${state} ${postcode}</p>
             <p class="dob">Birthday: ${date.toLocaleDateString()}</p>
         </div>
     </div>
