@@ -75,28 +75,41 @@ html {
   margin-bottom: 0.7rem;
 }
 
-.card.large {
-  width: 350px;
+.card.modal {
+  width: 370px;
   margin: 0;
   padding: 3.5rem 3.5rem;
+  position: relative;
 }
 
-.card.large .img {
+.card.modal .img {
   width: 15rem;
 }
 
-.card.large hr {
+.card.modal hr {
   margin: 2.5rem 0;
 }
 
-.card.large .title,
-.card.large .email,
-.card.large .city,
-.card.large .phone,
-.card.large .address,
-.card.large .dob {
+.card.modal .title,
+.card.modal .email,
+.card.modal .city,
+.card.modal .phone,
+.card.modal .address,
+.card.modal .dob {
   color: #a8a8a8;
   margin-bottom: 1.3rem;
+}
+
+.card.modal .close-btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 2.5rem;
+  font-weight: bold;
+  position: absolute;
+  top: 5px;
+  right: 20px;
 }
 
 .display-modal {
