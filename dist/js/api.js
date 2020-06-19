@@ -4,8 +4,7 @@ const randPeople = fetch(
 );
 const mainCard = document.querySelector(".main-card");
 const displayModal = document.querySelector(".display-modal");
-const closeBtn = document.querySelector(".close-btn");
-
+const overlay = document.createElement("div");
 
 // Get the data from the API
 randPeople
@@ -52,15 +51,9 @@ function createCard(emp) {
     })
   );
 }
-/**Create the overlay and append it to the body */
-function createOverlay() {
-  const overlay = document.createElement("div");
-  overlay.id = "overlay";
-  document.body.appendChild(overlay);
-  overlay.classList.add("active");
-  console.log();
-}
 
+/**destructure the empData object. create and append the modal
+ * card to its parent.*/
 function modalDisplay(empData) {
   const {
     name,
@@ -79,7 +72,7 @@ function modalDisplay(empData) {
   let date = new Date(dob.date);
 
   displayModal.innerHTML += `
-    <div class="card large">
+    <div class="card modal">
         <button class="close-btn">&times;</button>
         <img src='${picture.large}' class='img' alt>
         <div class="group">
@@ -93,10 +86,27 @@ function modalDisplay(empData) {
         </div>
     </div>
     `;
-
+  createCloseBtn();
   createOverlay();
 }
 
-function closeModal(params) {
+/**Create the overlay and append it to the body */
+function createOverlay() {
+  overlay.id = "overlay";
+  document.body.appendChild(overlay);
+  overlay.classList.add("active");
+}
 
+/**The close button has to be selected after the html is appended to the dom
+ * then when clicked call the closeModal method
+ */
+function createCloseBtn() {
+  const closeBtn = document.querySelector(".close-btn");
+  closeBtn.addEventListener("click", closeModal);
+}
+/**get the child element of displayModal then remove it from the dom. */
+function closeModal() {
+  let modal = displayModal.querySelector(".modal");
+  displayModal.removeChild(modal);
+  overlay.classList.remove("active");
 }
