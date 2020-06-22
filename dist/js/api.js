@@ -104,7 +104,7 @@ function createCloseBtn() {
   const closeBtn = document.querySelector(".close-btn");
   closeBtn.addEventListener("click", closeModal);
 }
-/**get the child element of displayModal then remove it from the dom. */
+/**get the child element of displayModal then remove it from the dom when called. */
 function closeModal() {
   let modal = displayModal.querySelector(".modal");
   displayModal.removeChild(modal);
